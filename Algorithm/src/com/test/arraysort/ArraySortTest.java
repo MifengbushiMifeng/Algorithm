@@ -2,7 +2,6 @@ package com.test.arraysort;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class ArraySortTest {
@@ -14,23 +13,19 @@ public class ArraySortTest {
 
         userInfo = new UserInfo();
         userInfo.setUserName("ZhouRonghui");
-        userInfo.setUnserAddress("Jilin");
+        userInfo.setUserAddress("Jilin");
         userList.add(userInfo);
 
         userInfo = new UserInfo();
         userInfo.setUserName("XiaZhao");
-        userInfo.setUnserAddress("Liaoning");
+        userInfo.setUserAddress("Liaoning");
         userList.add(userInfo);
 
         userInfo = new UserInfo();
         userInfo.setUserName("LittleGirl");
-        userInfo.setUnserAddress("Hert");
+        userInfo.setUserAddress("Hert");
         userList.add(userInfo);
 
-        // String column;
-        UserInfoComparetor userComparator = new UserInfoComparetor();
-        userComparator.setColumnName("UnserAddress");
-        userComparator.setDescFlg(true);
         /*
          * Collections.sort(userList, new Comparator<UserInfo>() {
          * 
@@ -42,18 +37,27 @@ public class ArraySortTest {
         UserInfo tmpUser = null;
         for (int i = 0; i < userList.size(); i++) {
             tmpUser = userList.get(i);
-            System.out.println(tmpUser.getUserName() + " / " + tmpUser.getUnserAddress());
+            System.out.println(tmpUser.getUserName() + " / " + tmpUser.getUserAddress());
         }
 
-        Collections.sort(userList, userComparator);
-
         System.out.println("---------Sort the list---------");
+
+        sortList(userList, "UserName", true);
+
         for (int j = 0; j < userList.size(); j++) {
             tmpUser = userList.get(j);
-            System.out.println(tmpUser.getUserName() + " / " + tmpUser.getUnserAddress());
+            System.out.println(tmpUser.getUserName() + " / " + tmpUser.getUserAddress());
         }
 
         // System.out.println(userList.size());
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void sortList(List<UserInfo> list, String fieldName, boolean descFlg) {
+        UserInfoComparetor userComparator = new UserInfoComparetor();
+        userComparator.setColumnName(fieldName);
+        userComparator.setDescFlg(descFlg);
+        Collections.sort(list, userComparator); // TODO
     }
 
 }

@@ -12,14 +12,15 @@ public class UserInfo {
         this.userName = userName;
     }
 
-    private String unserAddress;
+    private String userAddress;
 
-    public String getUnserAddress() {
-        return unserAddress;
+    public String getUserAddress() {
+        return userAddress;
     }
 
-    public void setUnserAddress(final String unserAddress) {
-        this.unserAddress = unserAddress;
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress;
     }
+
 
 }
