@@ -18,7 +18,6 @@ public class TestToUpper {
         }
         str = new String(c);
         System.out.print(str);
-
     }
 
 }
