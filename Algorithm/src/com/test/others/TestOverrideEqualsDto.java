@@ -38,4 +38,9 @@ public class TestOverrideEqualsDto {
         }
     }
 
+    @Override
+    public int hashCode() {
+        return userName.hashCode() + userID.hashCode();
+    }
+
 }
