@@ -9,7 +9,9 @@ public class TestOverrideEquals {
         TestOverrideEqualsDto dto2 = new TestOverrideEqualsDto();
         dto2.setUserID("001");
         dto2.setUserName("zhou rh");
-        System.out.println(dto1.equals(dto2));
+        System.out.println("Test euqals : " + dto1.equals(dto2));
+        System.out.println(dto1.hashCode());
+        System.out.println(dto2.hashCode());
     }
 
 }
