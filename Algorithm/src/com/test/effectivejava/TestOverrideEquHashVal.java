@@ -40,7 +40,7 @@ public class TestOverrideEquHashVal {
         return this.ashort == unit.ashort && this.achar == unit.achar && this.abyte == unit.abyte
                 && this.abool == unit.abool && this.along == unit.along
                 && Float.floatToIntBits(this.afloat) == Float.floatToIntBits(unit.afloat)
-                && Double.doubleToLongBits(this.adouble) == Double.doubleToLongBits(unit.adouble)
+                && Double.doubleToLongBits(this.adouble) == Double.doubleToLongBits(unit.adouble) // TODO
                 && this.aObject.equals(unit.aObject) && equalsInts(unit.ints)
                 && equalsTestOverrideEquHashVal(unit.units);
     }
@@ -54,4 +54,48 @@ public class TestOverrideEquHashVal {
         return Arrays.equals(this.units, aUnits);
     }
 
+    /**
+     * 
+     * [1]把某个非零常数值，例如17，保存在int变量result中； [2]对于对象中每一个关键域f（指equals方法中考虑的每一个域）：
+     * [2.1]boolean型，计算(f ? 0 : 1); [2.2]byte,char,short型，计算(int);
+     * [2.3]long型，计算(int) (f ^ (f>>>32));
+     * [2.4]float型，计算Float.floatToIntBits(afloat);
+     * [2.5]double型，计算Double.doubleToLongBits(adouble)得到一个long，再执行[2.3];
+     * [2.6]对象引用，递归调用它的hashCode方法; [2.7]数组域，对其中每个元素调用它的hashCode方法。
+     * [3]将上面计算得到的散列码保存到int变量c，然后执行 result=37*result+c; [4]返回result。;
+     * 
+     */
+    @Override
+    public int hashCode() {
+        int hashCode = 17;
+        hashCode = 37 * hashCode + (int) this.ashort;
+        hashCode = 37 * hashCode + (int) this.achar;
+        hashCode = 37 * hashCode + (int) this.abyte;
+        // hashCode = 37 * hashCode + (abool ? 0 : 1);
+        hashCode = 37 * hashCode + (abool ? 0 : 1);
+        hashCode = 37 * hashCode + (int) (this.along ^ (this.along >>> 32)); // TODO
+        hashCode = 37 * hashCode + Float.floatToIntBits(this.afloat);
+        long toLong = Double.doubleToLongBits(this.adouble);
+        hashCode = 37 * hashCode + (int) (toLong ^ (toLong >>> 32));
+        hashCode = 37 * hashCode + this.aObject.hashCode();
+        hashCode = 37 * hashCode + intsHashCode(this.ints);
+        hashCode = 37 * hashCode + unitsHashCode(this.units);
+        return hashCode;
+    }
+
+    private int intsHashCode(int[] ints) {
+        int result = 17;
+        for (int i = 0; i < ints.length; i++) {
+            result = 37 * result + ints[i];
+        }
+        return result;
+    }
+
+    private int unitsHashCode(TestOverrideEquHashVal[] units) {
+        int result = 17;
+        for (int i = 0; i < units.length; i++)
+            result = 37 * result + units[i].hashCode();
+
+        return 17;
+    }
 }
