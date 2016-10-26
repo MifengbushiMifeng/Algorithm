@@ -12,7 +12,7 @@ public class SingletonZero {
 
     private static final SingletonZero instance = new SingletonZero();
 
-    public static SingletonZero getInstance() {
+    public SingletonZero getInstance() {
         return instance;
     }
 
