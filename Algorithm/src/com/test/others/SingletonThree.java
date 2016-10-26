@@ -7,6 +7,8 @@ public class SingletonThree {
 
     /**
      * 登记式单例 类似Spring里面的方法，将类名注册，下次从里面直接获取。
+     * 登记式单例实际上维护了一组单例类的实例，将这些实例存放在一个Map（登记薄）中，对于已经登记过的实例，则从Map直接返回，对于没有登记的，则先登记
+     * ，然后返回。
      */
     private static Map<String, SingletonThree> map = new HashMap<String, SingletonThree>();
 
