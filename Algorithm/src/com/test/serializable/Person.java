@@ -42,9 +42,14 @@ public class Person implements Externalizable {
     private String age;
 
     public Person(String userName, String passWord, String age) {
+        super();
         this.userName = userName;
         this.passWord = passWord;
         this.age = age;
+    }
+
+    public Person() {
+        super();
     }
 
     /**
