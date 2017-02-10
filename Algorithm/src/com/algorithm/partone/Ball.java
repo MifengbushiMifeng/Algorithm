@@ -2,6 +2,10 @@ package com.algorithm.partone;
 
 public class Ball {
 
+    /**
+     * Jonathan ZHou
+     * @param args
+     */
     public static void main(String[] args) {
 
         double h = 100 / 2;
