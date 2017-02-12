@@ -7,7 +7,7 @@ public class Ball {
      * @param args
      */
     public static void main(String[] args) {
-
+        // Test for eclipse 
         double h = 100 / 2;
         double s = 100;
         for (int i = 0; i < 9; i++) {
