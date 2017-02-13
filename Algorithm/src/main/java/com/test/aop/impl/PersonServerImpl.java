@@ -8,8 +8,18 @@ import com.test.aop.PersonServer;
 public class PersonServerImpl implements PersonServer {
 
     @Override
-    public void start(String name) {
-        // TODO Auto-generated method stub
+    public void save(String name) {
+        System.out.println("This is save method");
+    }
 
+    @Override
+    public void update(String name, Integer id) {
+        System.out.println("This is update method");
+    }
+
+    @Override
+    public String getPersonName(Integer id) {
+        System.out.println("This is getPersonName method");
+        return "Jonathan Zhou";
     }
 }
