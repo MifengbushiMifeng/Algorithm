@@ -1,7 +1,6 @@
 package com.test.aop.Test;
 
 import com.test.aop.PersonServer;
-import com.test.serializable.Person;
 import org.junit.Test;
 
 import org.springframework.context.ApplicationContext;

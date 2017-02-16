@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.*;
 public class MyInterceptor {
 
     @Pointcut("execution(* com.test.aop.impl.PersonServerImpl.*(..))")
-    public void anyMethod() {//
+    public void anyMethod() {
     }
 
     @Before("anyMethod() && args(name)")
