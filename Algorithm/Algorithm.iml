@@ -15,7 +15,11 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/beanAop.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
@@ -29,7 +33,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.7.2" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.8" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.9" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib-nodep:2.2" level="project" />

@@ -6,13 +6,14 @@ import org.aspectj.lang.annotation.*;
 /**
  * Created by zhourh on 2/13/2017.
  */
+@Aspect
 public class MyInterceptor {
 
     @Pointcut("execution(* com.test.aop.impl.PersonServerImpl.*(..))")
-    private void anyMethod() {
+    public void anyMethod() {//
     }
 
-    @Before("anyMethod() &&  args(name)")
+    @Before("anyMethod() && args(name)")
     public void doAccessCheck(String name) {
         System.out.println(name);
         System.out.println("Do access before.");
