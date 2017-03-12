@@ -19,4 +19,8 @@ public class Ball {
         System.out.println(s + " / " + h);
     }
 
+    private boolean checkDifferent(String inString) {
+        return !inString.matches(".*(.)");
+    }
+
 }

@@ -14,7 +14,7 @@ public class TestJDBC {
 
         try {
             con = getJDBCCon();
-            String sql = "select * from student where name=?";// 预编译语句，“？”代表参数
+            String sql = "select * from student where name=?";// ?????????????????????
             pre = con.prepareStatement(sql);
             pre.setString(1, "todo");
 
@@ -48,7 +48,7 @@ public class TestJDBC {
         Connection con = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            String url = "jdbc:oracle:" + "thin:@127.0.0.1:1521:XE";// 127.0.0.1是本机地址，XE是精简版Oracle的默认数据库名
+            String url = "jdbc:oracle:" + "thin:@127.0.0.1:1521:XE";// 127.0.0.1??????????XE??????Oracle????????????
             String user = "todo";
             String passWord = "todo";
             con = DriverManager.getConnection(url, user, passWord);
