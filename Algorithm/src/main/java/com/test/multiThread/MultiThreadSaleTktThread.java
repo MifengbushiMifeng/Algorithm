@@ -5,7 +5,7 @@ public class MultiThreadSaleTktThread extends Thread {
     public static void main(String[] args) {
         MultiThreadSaleTktThread thread1 = new MultiThreadSaleTktThread("Thread A");
         MultiThreadSaleTktThread thread2 = new MultiThreadSaleTktThread("Thread B");
-        MultiThreadSaleTktThread thread3 = new MultiThreadSaleTktThread("Thread B");
+        MultiThreadSaleTktThread thread3 = new MultiThreadSaleTktThread("Thread C");
         thread1.start();
         thread2.start();
         thread3.start();
