@@ -14,23 +14,37 @@ public class AlgoRecursive {
         String base = "ABCD";
         List<String> resultList = list(base, "");
         System.out.println(resultList);
+        System.out.println(resultList.size());
 
     }
 
+    /**
+     * Recursive to get all the combination
+     *
+     * @param base   the base string
+     * @param buffer the buffer string
+     * @return all the combination
+     */
     private static List<String> list(String base, String buffer) {
 
         List<String> resultList = new ArrayList<String>();
+
         if (base.length() <= 0) {
             resultList.add(buffer);
         }
 
         for (int i = 0; i < base.length(); i++) {
-            List<String> tmp = new ArrayList<String>();
-            tmp = list((new StringBuilder(base)).deleteCharAt(i).toString(), buffer + base.charAt(i));
-            resultList.addAll(tmp);
+
+            List<String> tmpList;
+            // recursive to call list method
+            tmpList = list((new StringBuilder(base).deleteCharAt(i)).toString(), buffer + base.charAt(i));
+            resultList.addAll(tmpList);
+
         }
+
 
         return resultList;
     }
+
 
 }

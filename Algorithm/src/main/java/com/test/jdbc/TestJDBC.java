@@ -14,7 +14,7 @@ public class TestJDBC {
 
         try {
             con = getJDBCCon();
-            String sql = "select * from student where name=?";// ?????????????????????
+            String sql = "select * from student where name=?";
             pre = con.prepareStatement(sql);
             pre.setString(1, "todo");
 
