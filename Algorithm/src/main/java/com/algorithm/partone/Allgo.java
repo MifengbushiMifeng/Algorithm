@@ -26,9 +26,9 @@ public class Allgo {
 
         int nThAllgo = 0;
         int sum = 0;
-        int currentnThAllgo = 2;
+        int currentnThAllgo = 0;
 
-        for (int i = currentnThAllgo; ; i = i + 2) {
+        for (int i = 2; ; i = i + 2) {
 
             int tmp = 0;
 
