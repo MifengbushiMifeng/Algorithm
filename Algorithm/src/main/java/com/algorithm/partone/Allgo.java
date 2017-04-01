@@ -8,8 +8,17 @@ public class Allgo {
 
     public static void main(String[] args) {
 
-        
-        for (int i = 2; i < 100; i = i + 2) {
+        int result = nThAllgo(13);
+        System.out.println(result);
+    }
+
+    private static int nThAllgo(int nTh) {
+
+        int nThAllgo = 0;
+        int sum = 0;
+        int currentnThAllgo = 2;
+
+        for (int i = currentnThAllgo; ; i = i + 2) {
 
             int tmp = 0;
 
@@ -20,11 +29,18 @@ public class Allgo {
             }
 
             if (tmp > i) {
-                System.out.println(i);
+                sum = sum + 1;
+                currentnThAllgo = i;
+            }
+
+            if (sum == nTh) {
+                nThAllgo = currentnThAllgo;
+                break;
             }
 
         }
 
+        return nThAllgo;
 
     }
 
