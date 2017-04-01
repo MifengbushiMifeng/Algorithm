@@ -6,12 +6,22 @@ package com.algorithm.partone;
  */
 public class Allgo {
 
+    /**
+     * Allgo is the num that like this :
+     * For example the 12 has 2 / 3 / 4 / 6, and 2 + 3 + 4 + 6 > 12.
+     *
+     * @param args args
+     */
     public static void main(String[] args) {
 
         int result = nThAllgo(13);
         System.out.println(result);
     }
 
+    /**
+     * @param nTh of the allgo
+     * @return the nth allgo
+     */
     private static int nThAllgo(int nTh) {
 
         int nThAllgo = 0;
