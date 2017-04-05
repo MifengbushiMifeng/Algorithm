@@ -12,7 +12,7 @@ public class Sort {
 
         // Bubble sort
         bubbleSort(array);
-        
+
 
     }
 
@@ -27,11 +27,11 @@ public class Sort {
             return;
         }
 
-        int lenght = numbers.length;
+        int length = numbers.length;
         int tmp;
 
-        for (int i = 0; i < lenght - 1; i++) {
-            for (int j = i; j < lenght; j++) {
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = i; j < length; j++) {
 
                 if (numbers[i] > numbers[j]) {
                     tmp = numbers[i];
@@ -42,7 +42,7 @@ public class Sort {
             }
         }
 
-        for (int i = 0; i < lenght; i++) {
+        for (int i = 0; i < length; i++) {
             System.out.println(numbers[i]);
         }
 
