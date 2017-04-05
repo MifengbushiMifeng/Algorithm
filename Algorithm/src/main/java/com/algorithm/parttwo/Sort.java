@@ -9,35 +9,43 @@ public class Sort {
 
     public static void main(String[] args) {
         int[] array = {3, 5, 7, 2, 1, 4, 6};
+
+        // Bubble sort
         bubbleSort(array);
+        
+
     }
 
+    /**
+     * Bubble Sort
+     *
+     * @param numbers the array to be sorted
+     */
     public static void bubbleSort(int[] numbers) {
-
 
         if (numbers == null || numbers.length == 0) {
             return;
         }
 
-        int length = numbers.length;
+        int lenght = numbers.length;
+        int tmp;
 
-        for (int i = 0; i < length - 1; i++) {
+        for (int i = 0; i < lenght - 1; i++) {
+            for (int j = i; j < lenght; j++) {
 
-
-            for (int j = i + 1; j < length; j++) {
-
-                int tmp1 = numbers[i];
-                int tmp2 = numbers[j];
-                if (tmp1 > tmp2) {
-                    numbers[i] = tmp2;
-                    numbers[j] = tmp1;
-
+                if (numbers[i] > numbers[j]) {
+                    tmp = numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = tmp;
                 }
+
             }
         }
-        for (int i = 0; i < numbers.length; i++) {
+
+        for (int i = 0; i < lenght; i++) {
             System.out.println(numbers[i]);
         }
+
     }
 
 }
