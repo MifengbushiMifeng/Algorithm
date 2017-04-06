@@ -17,6 +17,15 @@ public class Sort {
     }
 
     /**
+     * @param nums
+     * @param start
+     * @param end
+     */
+    public static void quickSort(int[] nums, int start, int end) {
+
+    }
+
+    /**
      * Bubble Sort
      *
      * @param numbers the array to be sorted
