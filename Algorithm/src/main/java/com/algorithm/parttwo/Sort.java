@@ -11,18 +11,57 @@ public class Sort {
         int[] array = {3, 5, 7, 2, 1, 4, 6};
 
         // Bubble sort
-        bubbleSort(array);
+        // bubbleSort(array);
+
+        quickSort(array, 0, args.length);
 
 
     }
 
     /**
-     * @param nums
-     * @param start
-     * @param end
+     * @param nums  the array to be sorted
+     * @param start the start position
+     * @param end   the end position
      */
     public static void quickSort(int[] nums, int start, int end) {
 
+        if (start < end) {
+
+            // the base value
+            int base = nums[start];
+            int tmp;
+            int i = start, j = end;
+            do {
+
+                while ((nums[i] < base) && (i < end)) {
+                    i++;
+                }
+                while ((nums[j] > base) && (j > start)) {
+                    j--;
+                }
+
+                if (i <= j) {
+                    tmp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = tmp;
+                    i++;
+                    j--;
+                }
+
+            } while (i <= j);
+
+            if (start < j) {
+                quickSort(nums, start, j);
+            }
+
+            if (end > i) {
+                quickSort(nums, i, end);
+            }
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println(nums[i]);
+        }
     }
 
     /**
