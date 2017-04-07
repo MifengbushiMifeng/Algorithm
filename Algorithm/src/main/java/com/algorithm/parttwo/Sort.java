@@ -13,37 +13,34 @@ public class Sort {
         // Bubble sort
         // bubbleSort(array);
 
-        quickSort(array, 0, args.length);
+        quickSort(array, 0, array.length - 1);
 
 
     }
 
     /**
-     * @param nums  the array to be sorted
-     * @param start the start position
-     * @param end   the end position
+     * @param numbers the array to be sorted
+     * @param start   the start position
+     * @param end     the end position
      */
-    public static void quickSort(int[] nums, int start, int end) {
-
+    public static void quickSort(int[] numbers, int start, int end) {
         if (start < end) {
-
             // the base value
-            int base = nums[start];
+            int base = numbers[start];
             int tmp;
             int i = start, j = end;
             do {
-
-                while ((nums[i] < base) && (i < end)) {
+                while ((numbers[i] < base) && (i < end)) {
                     i++;
                 }
-                while ((nums[j] > base) && (j > start)) {
+                while ((numbers[j] > base) && (j > start)) {
                     j--;
                 }
 
                 if (i <= j) {
-                    tmp = nums[i];
-                    nums[i] = nums[j];
-                    nums[j] = tmp;
+                    tmp = numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = tmp;
                     i++;
                     j--;
                 }
@@ -51,16 +48,16 @@ public class Sort {
             } while (i <= j);
 
             if (start < j) {
-                quickSort(nums, start, j);
+                quickSort(numbers, start, j);
             }
 
             if (end > i) {
-                quickSort(nums, i, end);
+                quickSort(numbers, i, end);
             }
         }
 
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println(nums[i]);
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
         }
     }
 
