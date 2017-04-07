@@ -1,5 +1,7 @@
 package com.algorithm.parttwo;
 
+import org.junit.Test;
+
 /**
  * Created by Jonathan on 2017/4/5.
  * This class / file is used for...
@@ -7,22 +9,16 @@ package com.algorithm.parttwo;
 public class Sort {
 
 
-    public static void main(String[] args) {
-        int[] array = {3, 5, 7, 2, 1, 4, 6};
-
-        // Bubble sort
-        // bubbleSort(array);
-
-        quickSort(array, 0, array.length - 1);
-
-
-    }
+    private static int[] array = {3, 5, 7, 2, 1, 4, 6};
 
     /**
+     * Quick sort method
+     *
      * @param numbers the array to be sorted
      * @param start   the start position
      * @param end     the end position
      */
+    @Test
     public static void quickSort(int[] numbers, int start, int end) {
         if (start < end) {
             // the base value
@@ -62,10 +58,11 @@ public class Sort {
     }
 
     /**
-     * Bubble Sort
+     * Bubble Sort method
      *
      * @param numbers the array to be sorted
      */
+    @Test
     public static void bubbleSort(int[] numbers) {
 
         if (numbers == null || numbers.length == 0) {
